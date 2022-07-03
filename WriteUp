@@ -1,0 +1,68 @@
+
+MODEL	EXPERIMENT	RESULT	DECISION + EXPLANATION	PARAMETERS
+
+
+
+
+
+
+
+
+Conv3D	1	Training Accuracy        : 77.83
+Validation Accuracy    : 31	Training Accuracy is more than validation Accuracy, hence Over fitting.
+	25,54,549
+
+	2	Training Accuracy        : 86.43
+Validation Accuracy    : 57.00
+	Better than Previous model, but still Over fitting.
+	30,737,381
+
+	3	Training Accuracy        : 80.69
+Validation Accuracy    : 26
+	Overfitting has Increased drastically,  Let's trying adding more layers.
+	1,072,149
+
+	4	Training Accuracy        : 72.70
+Validation Accuracy    : 54	Not Much of Improvement with this model. Let's try adding dropouts.
+	25,54,549
+
+	5	Training Accuracy        : 61.69
+Validation Accuracy    : 24	Overfitting Increased.Let's try to reduce the parameters	25,54,549
+
+	6	Training Accuracy        : 97.89  Validation Accuracy    : 86.0	Got best training and validation Accuracies, hence finalizing this model.	
+907,733
+
+
+
+
+
+
+
+
+
+Conv2D+LSTM	Let's try Some models Using Conv2D+LSTM Network
+
+	7	Training Accuracy        : 88.99 Validation Accuracy    : 30	Training Accuracy is more than validation Accuracy, hence Over fitting.
+	502,181
+
+	8	Training Accuracy        : 92.31 Validation Accuracy    : 43	Better than Previous model, but still Over fitting.	502,181
+
+	9	Training Accuracy        : 66.82
+Validation Accuracy    : 16	When we try to reduce the Params, the accuracy is decreasing by a huge margin.	297,957
+
+	10	Training Accuracy        : 93.21
+Validation Accuracy    : 78	As per observation, increasing the params have increased the model performance but slightly Overfitting.	12,82,373
+
+	11	Training Accuracy        : 100 Validation Accuracy    : 89	Not much improvement.	994,117
+
+CNN LSTM with GRU
+	12	Training Accuracy        : 99.85
+Validation Accuracy    : 91	Though the model is very good, the params are very high, hence avoiding this model keeping the computational cost into consideration.	       36,69,317
+As per our Observation, the final Model suitable for Gesture recognition is Model no: 6, with categorical training accuracy : 97.89, Validation accuracy : 86.00, Training Loss: 0.1054, Validation Loss: 0.4075.
+Params of the model 6:
+Image_size= 120*120
+Frames= 16
+Batch Size= 20
+Epochs= 20
+Number of Classes= 5
+Filter_size= (2,2,2)
